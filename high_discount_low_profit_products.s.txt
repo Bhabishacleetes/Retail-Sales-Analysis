@@ -1,0 +1,12 @@
+ high_discount_low_profit_products.sql
+ Finds products with sales > 10000 and profit < 1000, ordered by average discount descending.
+
+SELECT 
+  product_name,
+  SUM(sales) AS total_sales,
+  SUM(profit) AS total_profit,
+  AVG(discount) AS avg_discount
+FROM retail_sales
+GROUP BY product_name
+HAVING total_sales > 10000 AND total_profit < 1000
+ORDER BY avg_discount DESC;

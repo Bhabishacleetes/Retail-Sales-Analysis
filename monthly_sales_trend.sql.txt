@@ -1,0 +1,10 @@
+ monthly_sales_trend.sql
+ Shows total sales per year and month ordered chronologically.
+
+SELECT 
+  YEAR(order_date) AS year,
+  MONTH(order_date) AS month,
+  SUM(sales) AS monthly_sales
+FROM retail_sales
+GROUP BY year, month
+ORDER BY year, month;

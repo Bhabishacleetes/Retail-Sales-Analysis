@@ -1,0 +1,14 @@
+ monthly_sales_growth.sql
+ Calculates monthly sales and the percentage growth compared to the previous month.
+
+WITH MonthlySales AS (
+  SELECT DATE_FORMAT(order_date, '%Y-%m') AS month, SUM(sales) AS total_sales
+  FROM retail_sales
+  GROUP BY month
+)
+SELECT 
+  month,
+  total_sales,
+  LAG(total_sales) OVER (ORDER BY month) AS prev_month_sales,
+  ROUND(((total_sales - LAG(total_sales) OVER (ORDER BY month)) / LAG(total_sales) OVER (ORDER BY month)) * 100, 2) AS sales_growth_percent
+FROM MonthlySales;

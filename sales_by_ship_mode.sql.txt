@@ -1,0 +1,11 @@
+ sales_by_ship_mode.sql
+Shows total orders, sales, and profit grouped by shipping mode.
+
+SELECT 
+  ship_mode,
+  COUNT(*) AS total_orders,
+  SUM(sales) AS total_sales,
+  SUM(profit) AS total_profit
+FROM retail_sales
+GROUP BY ship_mode
+ORDER BY total_orders DESC;

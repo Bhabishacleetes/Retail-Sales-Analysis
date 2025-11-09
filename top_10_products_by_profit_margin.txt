@@ -1,0 +1,13 @@
+-- top_10_products_by_profit_margin.sql
+-- Lists top 10 products with sales > 1000 ranked by profit margin percentage.
+
+SELECT 
+  product_name,
+  SUM(sales) AS total_sales,
+  SUM(profit) AS total_profit,
+  ROUND((SUM(profit) / SUM(sales)) * 100, 2) AS profit_margin_percent
+FROM retail_sales
+GROUP BY product_name
+HAVING total_sales > 1000
+ORDER BY profit_margin_percent DESC
+LIMIT 10;
