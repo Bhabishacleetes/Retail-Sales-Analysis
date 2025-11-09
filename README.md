@@ -9,7 +9,7 @@ This project analyzes retail sales data using SQL and Power BI to extract key bu
 
  Tools Used
 
-- SQL (MySQL / any other you used)
+- SQL 
 - Power BI Desktop
 
 Key Analyses and Insights
@@ -20,7 +20,8 @@ Key Analyses and Insights
 - Monthly sales trends and growth rates.
 - Profit margins and impact of discounts on profitability.
 
- Files Included- SQL scripts for data queries.
+ Files Included
+- SQL scripts for data queries.
 - Power BI dashboard file (.pbix).
 - Project summary document.
 
